@@ -35,7 +35,7 @@ The code sets up an Express.js server that listens for GET requests to the '/git
 5. Check the console for server logs and the response from the server.
 
 - **Example with Postman**:
-  ![Postman](postmanExample.jpeg)
+  ![Postman](postmanExample1.jpeg)
 
 ## Notes
 
