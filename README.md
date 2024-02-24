@@ -1,32 +1,43 @@
-# Fetching GitHub User Information with JavaScript using async/await
+# Fetching GitHub User Information with Express.js
 
-This is an example of how to use `async/await` in JavaScript to make a request to the GitHub API and retrieve information about a specific user.
+This code demonstrates how to create a simple Express.js server to fetch GitHub user information using async/await.
 
 ## Description
 
-The code consists of two main functions:
+The code sets up an Express.js server that listens for POST requests to the '/github-user-info' endpoint. When a POST request is received, it extracts the username from the request body, makes a request to the GitHub API to fetch the user information, and then sends the user information back as a JSON response.
 
-1. **fetchGitHubUserInfo(username)**: This function takes a username as an argument and uses `fetch` to make a request to the GitHub API to retrieve information about that user. If the request is successful, it returns the user data in JSON format. If the request fails, it throws an error.
+## Dependencies
 
-2. **displayGitHubUserInfo(username)**: This function calls `fetchGitHubUserInfo` to get the user information and then displays it in the browser console. If the user data is obtained, it is displayed in the console. If the request fails or the user information cannot be obtained, a message indicating that the information could not be retrieved is displayed.
+- **express**: Express.js is a web application framework for Node.js, used here to create the server and handle HTTP requests.
+
+## How It Works
+
+1. **Setting Up Express.js**: The code imports the Express.js module and creates an instance of the Express application.
+
+2. **Middleware Setup**: The code sets up middleware to parse JSON request bodies using `express.json()`.
+
+3. **fetchGitHubUserInfo Function**: This asynchronous function takes a username as input, makes a request to the GitHub API to fetch user information, and returns the user data if successful. If an error occurs, it logs the error and returns null.
+
+4. **displayGitHubUserInfo Function**: This asynchronous function handles POST requests to the '/github-user-info' endpoint. It extracts the username from the request body, calls `fetchGitHubUserInfo` to get the user information, and sends the user data back as a JSON response. If the user data cannot be obtained, it sends a 404 error response.
+
+5. **Handling POST Requests**: The code sets up a route to handle POST requests to the '/github-user-info' endpoint. When a POST request is received, it calls `displayGitHubUserInfo` to process the request.
+
+6. **Listening on Port**: The code sets the port number for the server to listen on. It listens for incoming connections on the specified port and logs a message to indicate that the server is running.
 
 ## Usage
 
-1. Clone this repository or copy the code into your code editor.
+1. Clone this repository or copy the code into your project directory.
 
-2. Open the `index.html` file in your web browser.
+2. Install Express.js by running `npm install express` in the terminal.
 
-3. Open the browser console to view the GitHub user information.
+3. Run the server by executing `node apiGitHub.js` in the terminal.
 
-4. Change the value of the `username` variable in the code to retrieve information about different GitHub users. For example, you can change `username = 'hrbackdev'` to the desired username.
+4. Send a POST request to `http://localhost:<port>/github-user-info` with a JSON body containing the username you want to fetch information for.
 
-## Requirements
+5. Check the console for server logs and the response from the server.
 
-- Active internet connection to make the request to the GitHub API.
+## Notes
 
-- The browser must support `fetch`, as this function is used to make the request to the GitHub API.
+- Ensure that your server has access to the internet to make requests to the GitHub API.
+- Handle errors gracefully and provide appropriate error messages in your application.
 
-## Example
-
-const username = 'hrbackdev';
-displayGitHubUserInfo(username);
