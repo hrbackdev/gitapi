@@ -4,7 +4,7 @@ This code demonstrates how to create a simple Express.js server to fetch GitHub 
 
 ## Description
 
-The code sets up an Express.js server that listens for GET requests to the '/github-user-info' endpoint. When a GET request is received with a query parameter 'username', it makes a request to the GitHub API to fetch the user information, and then sends the user information back as a JSON response.
+The code sets up an Express.js server that listens for GET requests to the '/github-user-info' endpoint. When a GET request is received with a query parameter 'username', it makes a request to the GitHub API to fetch the user information, and then sends the user information back as a JSON response. 
 
 ## Dependencies
 
