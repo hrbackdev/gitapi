@@ -30,7 +30,7 @@ The code sets up an Express.js server that listens for GET requests to the '/git
 
 3. Run the server by executing `node apiGitHub.js` in the terminal.
 
-4. Send a GET request to `https://api.github.com/users/username`.
+4. Send a GET request to `http://localhost:80/github-user-info?username=your-user-name`.
 
 5. Check the console for server logs and the response from the server.
 
