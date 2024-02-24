@@ -36,6 +36,11 @@ The code sets up an Express.js server that listens for POST requests to the '/gi
 
 5. Check the console for server logs and the response from the server.
 
+- **Postman**:
+  Open Postman and create a new POST request to `http://localhost:<port>/github-user-info`.
+  
+  ![Postman Usage](ruta/a/la/imagen.png)
+
 ## Notes
 
 - Ensure that your server has access to the internet to make requests to the GitHub API.
