@@ -4,7 +4,7 @@ This code demonstrates how to create a simple Express.js server to fetch GitHub 
 
 ## Description
 
-The code sets up an Express.js server that listens for POST requests to the '/github-user-info' endpoint. When a POST request is received, it extracts the username from the request body, makes a request to the GitHub API to fetch the user information, and then sends the user information back as a JSON response.
+The code sets up an Express.js server that listens for GET requests to the '/github-user-info' endpoint. When a GET request is received with a query parameter 'username', it makes a request to the GitHub API to fetch the user information, and then sends the user information back as a JSON response.
 
 ## Dependencies
 
@@ -18,11 +18,9 @@ The code sets up an Express.js server that listens for POST requests to the '/gi
 
 3. **fetchGitHubUserInfo Function**: This asynchronous function takes a username as input, makes a request to the GitHub API to fetch user information, and returns the user data if successful. If an error occurs, it logs the error and returns null.
 
-4. **displayGitHubUserInfo Function**: This asynchronous function handles POST requests to the '/github-user-info' endpoint. It extracts the username from the request body, calls `fetchGitHubUserInfo` to get the user information, and sends the user data back as a JSON response. If the user data cannot be obtained, it sends a 404 error response.
+4. **Handling GET Requests**: The code sets up a route to handle GET requests to the '/github-user-info' endpoint. When a GET request is received with a query parameter 'username', it calls `fetchGitHubUserInfo` to get the user information, and sends the user data back as a JSON response. If the user data cannot be obtained, it sends a 404 error response.
 
-5. **Handling POST Requests**: The code sets up a route to handle POST requests to the '/github-user-info' endpoint. When a POST request is received, it calls `displayGitHubUserInfo` to process the request.
-
-6. **Listening on Port**: The code sets the port number for the server to listen on. It listens for incoming connections on the specified port and logs a message to indicate that the server is running.
+5. **Listening on Port**: The code sets the port number for the server to listen on. It listens for incoming connections on the specified port and logs a message to indicate that the server is running.
 
 ## Usage
 
@@ -32,17 +30,14 @@ The code sets up an Express.js server that listens for POST requests to the '/gi
 
 3. Run the server by executing `node apiGitHub.js` in the terminal.
 
-4. Send a POST request to `http://localhost:<port>/github-user-info` with a JSON body containing the username you want to fetch information for.
+4. Send a GET request to `https://api.github.com/users/username`.
 
 5. Check the console for server logs and the response from the server.
 
-- **Postman**:
-  Open Postman and create a new POST request to `http://localhost:<port>/github-user-info`.
-  
-  ![Postman Usage](ruta/a/la/imagen.png)
+- **Example with Postman**:
+  ![](ruta/a/la/imagen.png)
 
 ## Notes
 
 - Ensure that your server has access to the internet to make requests to the GitHub API.
 - Handle errors gracefully and provide appropriate error messages in your application.
-
